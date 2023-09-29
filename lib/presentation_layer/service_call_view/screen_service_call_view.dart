@@ -13,7 +13,7 @@ class ScreenServiceCallview extends StatelessWidget {
     return Scaffold(
       appBar: AppBarWidget.appBarWidget(title: 'Service Calls',titleHiding: true),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

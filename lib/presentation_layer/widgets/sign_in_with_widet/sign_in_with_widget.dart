@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:service_pro/res/color/color.dart';
 import 'package:sizer/sizer.dart';
 
 class SignInWithWidget {
@@ -14,7 +13,7 @@ class SignInWithWidget {
             child: ElevatedButton(
                 onPressed: () {},
                style: outline ? OutlinedButton.styleFrom(
-        side: BorderSide(width: 1.0,color: Color.fromARGB(255, 215, 215, 215)),
+        side: const BorderSide(width: 1.0,color: Color.fromARGB(255, 215, 215, 215)),
         
       )
                : ButtonStyle(backgroundColor:MaterialStateProperty.all<Color>(Colors.black),),

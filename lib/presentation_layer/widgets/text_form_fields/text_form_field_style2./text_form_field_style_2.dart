@@ -4,13 +4,14 @@ import 'package:service_pro/res/color/color.dart';
 import 'package:sizer/sizer.dart';
 
 class TextFormFieldStyle2 extends StatelessWidget {
-  const TextFormFieldStyle2({super.key,required this.title,required this.hintText,this.ismaxLines=false});
+   const TextFormFieldStyle2({super.key,required this.title,required this.hintText,this.ismaxLines=false});
 
   final String title;
   final String hintText;
   final bool ismaxLines;
-
+  
   @override
+
   Widget build(BuildContext context) {
     return Center(
       child: Column(
@@ -37,6 +38,9 @@ class TextFormFieldStyle2 extends StatelessWidget {
               borderSide: BorderSide.none, // Remove the border
             ),
           ),
+          validator: (value){
+            
+          },
         ),
       ),
       SizedBox(height: 3.h,)

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service_pro/presentation_layer/add_and_edit_customer/add_and_edit_customer.dart';
 import 'package:service_pro/presentation_layer/customer_view/screen_customer_view.dart';
+import 'package:service_pro/presentation_layer/edit_your_call/screen_edit_your_call.dart';
 import 'package:service_pro/presentation_layer/home/screen_home.dart';
 import 'package:service_pro/presentation_layer/otp/screen_otp.dart';
 import 'package:service_pro/presentation_layer/register_new_call/register_new_call.dart';
@@ -20,6 +21,7 @@ class RouteGenarator {
   static const String home = '/home';
   static const String registernewcall = '/register_new_call';
   static const String servicecallview = '/service_call_view';
+  static const String editYourCall = '/edit_call';
   static const String customerview = '/customer_view';
   static const String addandeditcustomer = '/add_and_edit_customer';
 
@@ -41,7 +43,7 @@ static List<String> route = [
         );
       case signin:
         return MaterialPageRoute(
-          builder: (_) => const ScreenSignIn(),
+          builder: (_) =>  ScreenSignIn(),
         );
       case signup:
         return MaterialPageRoute(
@@ -62,6 +64,10 @@ static List<String> route = [
       case servicecallview:
         return MaterialPageRoute(
           builder: (_) => const ScreenServiceCallview(),
+        );
+      case editYourCall:
+        return MaterialPageRoute(
+          builder: (_) => const ScreenEditYourCall(),
         );
       case customerview:
         return MaterialPageRoute(

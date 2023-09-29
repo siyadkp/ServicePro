@@ -25,41 +25,66 @@ class TextFormFiledWidget extends StatelessWidget {
           ),
           SizedBox(
             width: 85.w,
-            height: 14.w,
             child: TextFormField(
-              
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle:
-                    const TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
+                hintStyle: const TextStyle(
+                    fontWeight: FontWeight.normal, fontSize: 15),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 1, color: KColors.grey),
-                    borderRadius: BorderRadius.circular(8)),
+                  borderSide: BorderSide(width: 1, color: KColors.grey),
+                  borderRadius: BorderRadius.circular(8),
+                ),
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2,
-                      color: KColors.darkBlue,
-                    ),
-                    borderRadius: BorderRadius.circular(8)),
+                  borderSide: BorderSide(
+                    width: 2,
+                    color: KColors.darkBlue,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+               
+                errorBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    width: 2,
+                    color:
+                        Colors.red, // Customize the color for the error border
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    width: 2,
+                    color: Colors
+                        .red, // Customize the color for the focused error border
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
+              
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+               return 'sdfsdfs';
+                }
+                return null;
+              },
             ),
           ),
           forgotPasswordEnable
               ? SizedBox(
-                width: 85.w,
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: TextButton(
+                  width: 85.w,
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: TextButton(
                       onPressed: () {},
-                      child: Text('Forgot password',
-                          style: TextStyle(
-                            fontSize: 3.2.w,
-                            color: KColors.darkBlue
-                          ),),),
-                ),
-              )
+                      child: Text(
+                        'Forgot password',
+                        style:
+                            TextStyle(fontSize: 3.2.w, color: KColors.darkBlue),
+                      ),
+                    ),
+                  ),
+                )
               : const SizedBox(),
-              SizedBox(
+          SizedBox(
             height: 3.h,
           ),
         ],
