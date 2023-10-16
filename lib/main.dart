@@ -5,7 +5,7 @@ import 'package:sizer/sizer.dart';
 
 
 
-// Main functio 
+// Main function 
 
 void main() => runApp(const MyApp());
 

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:service_pro/presentation_layer/widgets/app_bar/app_bar.dart';
 import 'package:service_pro/presentation_layer/widgets/buttons/buttons.dart';
-import 'package:service_pro/presentation_layer/widgets/text_form_fields/text_form_field_style2./text_form_field_style_2.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../res/fonts/fonts.dart';
+import '../widgets/text_form_fields/text_form_field_style2/text_form_field_style_2.dart';
 
 class ScreenAddAndEditCustomer extends StatelessWidget {
   const ScreenAddAndEditCustomer({super.key});
