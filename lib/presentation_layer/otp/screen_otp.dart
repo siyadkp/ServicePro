@@ -14,41 +14,63 @@ class ScreenOtp extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Enter Your OTP',style: KFonts.poppins(fontSize: 21,color:KColors.darkBlue,fontWeight: FontWeight.bold),),
-          Text('We have sent a OTP on your number',style: KFonts.poppins(fontSize: 13,color: KColors.grey),),
-          SizedBox(height: 2.h,),
+          Text(
+            'Enter Your OTP',
+            style: KFonts.poppins(
+                fontSize: 21,
+                color: KColors.darkBlue,
+                fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'We have sent a OTP on your number',
+            style: KFonts.poppins(fontSize: 13, color: KColors.grey),
+          ),
+          SizedBox(
+            height: 2.h,
+          ),
           SizedBox(
             height: 9.h,
             child: OtpTextField(
               margin: EdgeInsets.all(2.w),
-
               fieldWidth: 15.w,
               numberOfFields: 4,
               enabledBorderColor: KColors.grey,
               focusedBorderColor: KColors.darkBlue,
               borderWidth: 1,
-
               showFieldAsBox: true,
-
               onCodeChanged: (String code) {},
-
               onSubmit: (String verificationCode) {
                 showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text("Verification Code"),
-                        content: Text('Code entered is $verificationCode'),
-                      );
-                    });
-              }, 
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text("Verification Code"),
+                      content: Text('Code entered is $verificationCode'),
+                    );
+                  },
+                );
+              },
             ),
           ),
-          SizedBox(height: 2.h,),
-          TextButton(onPressed: (){
-            Navigator.push(context,MaterialPageRoute(builder: (context) => ScreenSignUp(),));
-          }, child:  Text('Resend OTP',style: KFonts.poppins(fontSize: 14,color: KColors.darkBlue,fontWeight: FontWeight.w500),),)
-          
+          SizedBox(
+            height: 2.h,
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ScreenSignUp(),
+                  ));
+            },
+            child: Text(
+              'Resend OTP',
+              style: KFonts.poppins(
+                  fontSize: 14,
+                  color: KColors.darkBlue,
+                  fontWeight: FontWeight.w500),
+            ),
+          )
         ],
       ),
     );

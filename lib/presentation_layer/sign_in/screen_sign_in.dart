@@ -9,29 +9,33 @@ import '../../route/route_genarator.dart';
 import '../widgets/text_form_fields/text_form_field.dart';
 
 class ScreenSignIn extends StatefulWidget {
-   ScreenSignIn({super.key});
+  const ScreenSignIn({super.key});
 
   @override
   State<ScreenSignIn> createState() => _ScreenSignInState();
 }
 
 class _ScreenSignInState extends State<ScreenSignIn> {
-final formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
       child: Scaffold(
-        appBar:
-            PreferredSize(preferredSize: Size.fromHeight(5.h), child: AppBar(automaticallyImplyLeading: false,),),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(5.h),
+          child: AppBar(
+            automaticallyImplyLeading: false,
+          ),
+        ),
         body: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text('Welcome back',
-                  style:
-                      KFonts.poppins(fontSize: 8.w, fontWeight: FontWeight.bold)),
+                  style: KFonts.poppins(
+                      fontSize: 8.w, fontWeight: FontWeight.bold)),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 25),
@@ -45,30 +49,29 @@ final formKey = GlobalKey<FormState>();
             ),
             const TextFormFiledWidget(
                 title: 'Email', hintText: 'Enter your email'),
-            
             const TextFormFiledWidget(
                 title: 'Password',
-                hintText: 'Enter your password',  
+                hintText: 'Enter your password',
                 forgotPasswordEnable: true),
-            
             Buttons.inlineButton(() {
-              if(formKey.currentState!.validate()){
+              if (formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),);
+                  const SnackBar(content: Text('Processing Data')),
+                );
               }
-                 Navigator.pushNamed(context, RouteGenarator.otp);
+              Navigator.pushNamed(context, RouteGenarator.otp);
             }, 'Sign in'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Are you a new User?',
-                  style:
-                      KFonts.poppins(fontSize: 3.w, fontWeight: FontWeight.w500),
+                  style: KFonts.poppins(
+                      fontSize: 3.w, fontWeight: FontWeight.w500),
                 ),
                 TextButton(
                     onPressed: () {
-                     Navigator.pushNamed(context, RouteGenarator.signup);
+                      Navigator.pushNamed(context, RouteGenarator.signup);
                     },
                     child: Text(
                       'Sign up',
@@ -86,8 +89,8 @@ final formKey = GlobalKey<FormState>();
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 25.w, 
-                  height: 1, 
+                  width: 25.w,
+                  height: 1,
                   color: Colors.grey[400],
                 ),
                 Text(
@@ -95,20 +98,23 @@ final formKey = GlobalKey<FormState>();
                   style: KFonts.poppins(fontSize: 13, color: Colors.grey),
                 ),
                 Container(
-                  width: 25.w, 
-                  height: 1, 
+                  width: 25.w,
+                  height: 1,
                   color: Colors.grey,
                 ),
               ],
             ),
-            
             SizedBox(
               height: 4.h,
             ),
             SignInWithWidget.signInWithWidget(
-                logo: KImages.googleLogo, title: 'Continue with Google',outline: true),
+                logo: KImages.googleLogo,
+                title: 'Continue with Google',
+                outline: true),
             SignInWithWidget.signInWithWidget(
-                logo: KImages.appleLogo, title: 'Continue with Apple',outline: false),
+                logo: KImages.appleLogo,
+                title: 'Continue with Apple',
+                outline: false),
           ],
         ),
       ),

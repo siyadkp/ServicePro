@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:service_pro/presentation_layer/add_and_edit_customer/add_and_edit_customer.dart';
 import 'package:service_pro/res/fonts/fonts.dart';
 import 'package:service_pro/res/icons/icons.dart';
 import 'package:service_pro/route/route_genarator.dart';
@@ -16,7 +15,8 @@ class ScreenHome extends StatelessWidget {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(3.h),
           child: AppBar(
-            backgroundColor: Colors.grey[200],automaticallyImplyLeading: false,
+            backgroundColor: Colors.grey[200],
+            automaticallyImplyLeading: false,
           )),
       body: ListView(
         children: [
@@ -24,29 +24,30 @@ class ScreenHome extends StatelessWidget {
             height: 1.h,
           ),
           Center(
-         child: Container(
-    width: 90.w,
-    height: 50.w,
- padding: const EdgeInsets.all(10),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(24),
-      gradient: const LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        colors: [
-          Color.fromARGB(255, 74, 146, 255),
-          Color.fromARGB(255, 41, 91, 165),
-        ],
-      ),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.5), // Shadow color
-          spreadRadius: 2, // Spread of the shadow
-          blurRadius: 5, // Blur radius of the shadow
-          offset: const Offset(0, 3), // Offset of the shadow (adjust for your needs)
-        ),
-      ],
-    ),
+            child: Container(
+              width: 90.w,
+              height: 50.w,
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                gradient: const LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color.fromARGB(255, 74, 146, 255),
+                    Color.fromARGB(255, 41, 91, 165),
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5), // Shadow color
+                    spreadRadius: 2, // Spread of the shadow
+                    blurRadius: 5, // Blur radius of the shadow
+                    offset: const Offset(
+                        0, 3), // Offset of the shadow (adjust for your needs)
+                  ),
+                ],
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -86,7 +87,7 @@ class ScreenHome extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only( right: 5),
+                        padding: const EdgeInsets.only(right: 5),
                         child: Container(
                           width: 120,
                           height: 50,
@@ -172,13 +173,14 @@ class ScreenHome extends StatelessWidget {
                   itemCount: 5,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 8,
-                     ),
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 8,
+                  ),
                   itemBuilder: (BuildContext context, int index) {
                     return ServicesCard(
-                        data:
-                            IconsAndNaming.homeCardsIconsAndNaming[index],routeName: RouteGenarator.route[index],);
+                      data: IconsAndNaming.homeCardsIconsAndNaming[index],
+                      routeName: RouteGenarator.route[index],
+                    );
                   },
                 )),
           ),
