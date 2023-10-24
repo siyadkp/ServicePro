@@ -17,28 +17,28 @@ class ScreenSignUp extends StatelessWidget {
           PreferredSize(preferredSize: Size.fromHeight(5.h), child: AppBar()),
       body: ListView(
         children: [
-           HeadingStyleTwo(title:'Register',subTitle: 'Create your new account',titleFontSize: 6.w,subTitleFontSize: 3.5.w), 
-            SizedBox(height: 2.h,),
-         
+          HeadingStyleTwo(
+              title: 'Register',
+              subTitle: 'Create your new account',
+              titleFontSize: 6.w,
+              subTitleFontSize: 3.5.w),
+          SizedBox(
+            height: 2.h,
+          ),
           const TextFormFiledWidget(
               title: 'Username', hintText: 'Enter your username'),
-             
-         
           const TextFormFiledWidget(
             title: 'Email',
             hintText: 'Enter your email',
           ),
-         
           const TextFormFiledWidget(
             title: 'Phone',
             hintText: 'Enter your phone number',
           ),
-         
           const TextFormFiledWidget(
             title: 'Password',
             hintText: 'Enter your password',
           ),
-         
           const TextFormFiledWidget(
             title: 'Confirm password',
             hintText: 'Enter your Confirm password',
@@ -47,7 +47,11 @@ class ScreenSignUp extends StatelessWidget {
             height: 4.h,
           ),
           Buttons.inlineButton(() {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const ScreenHome(),));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ScreenHome(),
+                ));
           }, 'Create Account'),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -58,14 +62,15 @@ class ScreenSignUp extends StatelessWidget {
                     KFonts.poppins(fontSize: 3.w, fontWeight: FontWeight.w500),
               ),
               TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Sign in',
-                    style: KFonts.poppins(
-                        fontSize: 3.2.w,
-                        fontWeight: FontWeight.w600,
-                        color: KColors.darkBlue),
-                  )),
+                onPressed: () {},
+                child: Text(
+                  'Sign in',
+                  style: KFonts.poppins(
+                      fontSize: 3.2.w,
+                      fontWeight: FontWeight.w600,
+                      color: KColors.darkBlue),
+                ),
+              ),
             ],
           ),
         ],
@@ -73,5 +78,3 @@ class ScreenSignUp extends StatelessWidget {
     );
   }
 }
-
-

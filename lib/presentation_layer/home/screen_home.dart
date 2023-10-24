@@ -13,11 +13,12 @@ class ScreenHome extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(3.h),
-          child: AppBar(
-            backgroundColor: Colors.grey[200],
-            automaticallyImplyLeading: false,
-          )),
+        preferredSize: Size.fromHeight(3.h),
+        child: AppBar(
+          backgroundColor: Colors.grey[200],
+          automaticallyImplyLeading: false,
+        ),
+      ),
       body: ListView(
         children: [
           SizedBox(
@@ -167,22 +168,23 @@ class ScreenHome extends StatelessWidget {
           ),
           Center(
             child: SizedBox(
-                height: 71.h,
-                width: 91.w,
-                child: GridView.builder(
-                  itemCount: 5,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                  ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return ServicesCard(
-                      data: IconsAndNaming.homeCardsIconsAndNaming[index],
-                      routeName: RouteGenarator.route[index],
-                    );
-                  },
-                )),
+              height: 71.h,
+              width: 91.w,
+              child: GridView.builder(
+                itemCount: 5,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return ServicesCard(
+                    data: IconsAndNaming.homeCardsIconsAndNaming[index],
+                    routeName: RouteGenarator.route[index],
+                  );
+                },
+              ),
+            ),
           ),
         ],
       ),

@@ -10,26 +10,25 @@ class ScreenRegisterNewCall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget.appBarWidget(title: 'Register a new call',titleHiding: false),
+      appBar: AppBarWidget.appBarWidget(
+          title: 'Register a new call', titleHiding: false),
       body: ListView(
         shrinkWrap: true,
         children: [
-        
-         
-          
           Padding(
-            padding:  EdgeInsets.only(top: 2.h,left: 3.w,bottom: 1.h),
+            padding: EdgeInsets.only(top: 2.h, left: 3.w, bottom: 1.h),
             child: Text('Customer details',
-                style:
-                    TextStyle(fontSize: 4.w,fontWeight: FontWeight.bold)),
+                style: TextStyle(fontSize: 4.w, fontWeight: FontWeight.bold)),
           ),
           const TextFormFiledWidget(
               title: 'Customer', hintText: 'Enter your customer name'),
-                 Padding(
-            padding:  EdgeInsets.only(left: 3.w,bottom: 1.h,),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 3.w,
+              bottom: 1.h,
+            ),
             child: Text('Customer details',
-                style:
-                    TextStyle(fontSize: 4.w,fontWeight: FontWeight.bold)),
+                style: TextStyle(fontSize: 4.w, fontWeight: FontWeight.bold)),
           ),
           const TextFormFiledWidget(
               title: 'Customer', hintText: 'Enter your customer name'),
@@ -41,8 +40,10 @@ class ScreenRegisterNewCall extends StatelessWidget {
               title: 'Customer', hintText: 'Enter your customer name'),
           const TextFormFiledWidget(
               title: 'Customer', hintText: 'Enter your customer name'),
-          Buttons.outlinedButton((){}, 'Register'),
-          SizedBox(height: 3.h,)
+          Buttons.outlinedButton(() {}, 'Register'),
+          SizedBox(
+            height: 3.h,
+          )
         ],
       ),
     );
